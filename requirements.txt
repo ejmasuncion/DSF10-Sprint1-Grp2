@@ -12,3 +12,4 @@ shap==0.40.0
 statsmodels==0.13.1
 streamlit==1.12.2
 xgboost==1.5.0
+lorem==0.1.1

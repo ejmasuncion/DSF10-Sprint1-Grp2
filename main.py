@@ -1,13 +1,27 @@
+from gettext import install
+from turtle import width
 import matplotlib.pyplot as plt
 import pandas as pd
 import plotly.express as px
 import seaborn as sns
 import streamlit as st
+import lorem 
+import base64
+
 
 from DataViz.plot_account_activity import *
+from add_background import add_bg_from_local
 
+# # settings for all of the pages in the app
 st.set_page_config(layout="wide")
 
+add_bg_from_local('images/test_img1_soft.png')
+
+# # set css settings
+with open("style.css") as f:
+    st.markdown('<style>{}</style>'.format(f.read()), unsafe_allow_html=True)
+
+# load the data 
 data = pd.read_csv("../micro_world.csv")
 ph_data =  data[data['economy']=='Philippines']
 
@@ -19,26 +33,35 @@ def load_data():
     return data
 
 def overview():
-    pass
+    st.title('Digital Financial Access in the Philippines: An Opportunity for Financial Inclusion')
+    st.subheader('this is a subheader')
+    st.image('images/test_img1.png', width = 800) # width is in pixels?
+    st.caption('this is a caption')
+    st.write(lorem.paragraph())
 
 def look_account_ownership():
-    col1, col2 = st.columns([5,7])
+    st.header('Account Ownership in 2017')
 
-    with col1:
-        st.pyplot(has_an_account(ph_data))
+    st.pyplot(has_an_account(ph_data))
 
 
-    with col2:
-        option = st.selectbox(
-             'What would you like to see?',
-             ('Account Activity', 'Mobile Activity', 'Others'))
-        st.write('You selected:', option)
-        if (option) == 'Mobile Activity':
-            st.pyplot(plot_mobile_activity(ph_data))
-        elif (option) == 'Account Activity':
-            st.pyplot(plot_account_activity(ph_data))
-        else :
-            st.write('PLOT COMING SOON! ^_^')
+    with st.container():
+        col1, col2 = st.columns([5,7])
+        
+        with col1:
+           st.write(lorem.paragraph())
+
+        with col2:
+            option = st.selectbox(
+                'What would you like to see?',
+                ('Account Activity', 'Mobile Activity', 'Others'))
+            st.write('You selected:', option)
+            if (option) == 'Mobile Activity':
+                st.pyplot(plot_mobile_activity(ph_data))
+            elif (option) == 'Account Activity':
+                st.pyplot(plot_account_activity(ph_data))
+            else :
+                st.write('PLOT COMING SOON! ^_^')
 
     
 def digital_overview():
