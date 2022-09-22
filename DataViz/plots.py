@@ -3,11 +3,7 @@ import pandas as pd
 import plotly.express as px
 import seaborn as sns
 
-data = pd.read_csv("../micro_world.csv")
-ph_data =  data[data['economy']=='Philippines']
-
-
-def has_an_account():
+def has_an_account(data):
 
     def classify_account(x):    
         if x['account_fin'] == 1 and x['account_mob'] == 1:
@@ -49,7 +45,7 @@ def has_an_account():
     return figure    
     
     
-def plot_account_activity():
+def plot_account_activity(data):
     
     ## data wrangling
     fin_activity = ph_data[['wpid_random', 'account', 'account_fin', 'fin9', 'fin10']]
@@ -92,7 +88,7 @@ def plot_account_activity():
     return figure
 
 
-def plot_mobile_activity():
+def plot_mobile_activity(data):
     ## data wrangling
     wide_mob = pd.melt(
         data,

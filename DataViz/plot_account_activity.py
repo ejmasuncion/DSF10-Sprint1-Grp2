@@ -3,11 +3,7 @@ import pandas as pd
 import plotly.express as px
 import seaborn as sns
 
-data = pd.read_csv("../micro_world.csv")
-ph_data =  data[data['economy']=='Philippines']
-
-
-def has_an_account():
+def has_an_account(data):
 
     def classify_account(x):    
         if x['account_fin'] == 1 and x['account_mob'] == 1:
@@ -19,8 +15,8 @@ def has_an_account():
         else:
             return 'no_acct'
 
-    ph_data['Number of accounts'] = ph_data.apply(classify_account , axis = 1)
-    subset_account = ph_data[['wpid_random','account','Number of accounts']]
+    data['Number of accounts'] = data.apply(classify_account , axis = 1)
+    subset_account = data[['wpid_random','account','Number of accounts']]
     account_class_mapping = {
     'no_acct': 'has no accounts',
     'only_fin_acct': 'financial institution only',
@@ -49,10 +45,10 @@ def has_an_account():
     return figure    
     
     
-def plot_account_activity():
+def plot_account_activity(data):
     
     ## data wrangling
-    fin_activity = ph_data[['wpid_random', 'account', 'account_fin', 'fin9', 'fin10']]
+    fin_activity = data[['wpid_random', 'account', 'account_fin', 'fin9', 'fin10']]
 
     wide_fin = pd.melt(
         fin_activity,
@@ -92,7 +88,7 @@ def plot_account_activity():
     return figure
 
 
-def plot_mobile_activity():
+def plot_mobile_activity(data):
     ## data wrangling
     wide_mob = pd.melt(
         data,
