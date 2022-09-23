@@ -28,21 +28,22 @@ def has_an_account(data):
     subset_account = subset_account.replace({'Number of accounts':account_class_mapping})
     subset_account = subset_account.replace({'account':account_class_mapping})
 
-    figure = plt.figure(figsize=(7,5)  , dpi= 150)
+    # figure = plt.figure(dpi= 150)
+    fig, ax = plt.subplots(figsize=(10, 5))
 
     ax = sns.countplot(data = subset_account, x ='account', 
             hue = 'Number of accounts',
             dodge = False)
 
-    ax.set(xlabel='Has access to an account', ylabel='count')
+    ax.set(xlabel='Has access to an account', ylabel='Frequency')
 
     # for p in ax.patches:
-    #     percentage = '{:.1f}%'.format(100 * p.get_height()/float(len(ph_data)))
-    #     x = p.get_x() + p.get_width()
-    #     y = p.get_height()
-    #     ax.annotate(percentage, (x, y),ha='left')
-
-    return figure    
+    #     percentage = '{:.1f}%'.format(100 * p.get_height()/float(len(data)))
+    #     x = p.get_x() + p.get_width() - 0.5
+    #     y = p.get_height() + 0.5
+    #     ax.annotate(percentage, (x, y))
+    
+    return fig    
     
     
 def plot_account_activity(data):
@@ -71,8 +72,9 @@ def plot_account_activity(data):
     wide_fin.rename(columns = {'value':'Had at least 1 transaction'}, inplace = True)
 
     ## creating the plot
-    figure = plt.figure(figsize=(7,4)  , dpi= 150)
-
+    # figure = plt.figure(dpi= 150)
+    
+    fig, ax = plt.subplots(figsize=(10, 5))
     ax = sns.countplot(data = wide_fin, y = 'variable', hue ='Had at least 1 transaction', dodge = True)
 
     ax.set(title='Account activity of those with bank accounts', xlabel='count', ylabel = 'transaction')
@@ -85,7 +87,7 @@ def plot_account_activity(data):
 
     sns.move_legend(ax, "lower right", ncol =2)
         
-    return figure
+    return fig
 
 
 def plot_mobile_activity(data):
@@ -108,7 +110,8 @@ def plot_mobile_activity(data):
     wide_mob.rename(columns = {'value':'Used service?'}, inplace = True)
         
     ## creating the plot
-    figure = plt.figure(figsize=(7,2), dpi= 150)
+    # figure = plt.figure(dpi= 150)
+    fig, ax = plt.subplots(figsize=(10, 5))
 
     ax = sns.countplot(data = wide_mob, y = 'variable', hue ='Used service?', dodge = True)
 
@@ -122,4 +125,4 @@ def plot_mobile_activity(data):
 
     sns.move_legend(ax, "lower right", ncol =2)
         
-    return figure
+    return fig

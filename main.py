@@ -10,16 +10,21 @@ import base64
 
 
 from DataViz.plot_account_activity import *
+from DataViz.digital_access import *
+from DataViz.reasons import *
 from add_background import add_bg_from_local
 
 # # settings for all of the pages in the app
 st.set_page_config(layout="wide")
 
-add_bg_from_local('images/test_img1_soft.png')
+# add_bg_from_local('images/test_img1_soft.png')
 
 # # set css settings
 with open("style.css") as f:
     st.markdown('<style>{}</style>'.format(f.read()), unsafe_allow_html=True)
+
+# setting plot color themes
+sns.set_theme(style="white", palette=sns.color_palette("Set2"))
 
 # load the data 
 data = pd.read_csv("../micro_world.csv")
@@ -39,17 +44,29 @@ def overview():
     st.caption('this is a caption')
     st.write(lorem.paragraph())
 
+    with st.container():
+        col1, col2, col3 = st.columns((2,8,2))
+        with col1:
+            pass
+        with col2:
+            st.write("")
+            st.write("")
+            st.pyplot(reasons_no_account(ph_data))
+
+        with col3:
+            pass
+
+
 def look_account_ownership():
     st.header('Account Ownership in 2017')
 
-    st.pyplot(has_an_account(ph_data))
-
-
     with st.container():
+        
         col1, col2 = st.columns([5,7])
         
         with col1:
-           st.write(lorem.paragraph())
+            st.pyplot(has_an_account(ph_data))
+            st.write(lorem.paragraph())
 
         with col2:
             option = st.selectbox(
@@ -65,17 +82,62 @@ def look_account_ownership():
 
     
 def digital_overview():
-    pass
+
+    st.header('This is a header')
+
+    st.write(lorem.paragraph())
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.subheader('Low account ownership')
+        st.pyplot(has_an_account(ph_data))
+
+    with col2:
+        st.subheader('High mobile phone ownership')
+        st.pyplot(has_mobile_phone(ph_data))
+
+    
+    st.write(lorem.paragraph())
+
+    with st.container():
+        col1, col2, col3 = st.columns((2,8,2))
+        with col1:
+            pass
+        with col2:
+            st.write("")
+            st.write("")
+            st.subheader('Low utilization of mobile financial services')
+            st.pyplot(digital_access(ph_data))
+
+        with col3:
+            pass
+    st.write('''This presents an opportunity to introduce digital finance as a tool to make other financial services available to the different people 
+    - especially to the unbanked who have mobile phones. \n \n Philippines falls in the bottom four in terms of digital financial access in Southeast Asia. 
+    ''')
+    with st.container():
+        col1, col2, col3 = st.columns((2,8,2))
+        with col1:
+            pass
+        with col2:
+            st.write("")
+            st.write("")
+            st.pyplot(digital_access_sea(data))
+
+        with col3:
+            pass
+   
+
 
 def clusters():
     st.title('Clustering')
     st.subheader('this is subheader')
 
     with st.container():
-        col1, col2 = st.columns([3,1.5])
+        col1, col2 = st.columns([8,4])
 
         with col1:
-            st.image('images/clusters.png', width = 800)
+            st.image('images/clusters.png')
             
         with col2:
             option = st.selectbox(
