@@ -18,6 +18,12 @@ def digital_access(data):
 
     PH_data = data[data['economy']=='Philippines']
 
+    class_mapping = {
+    0 : 'No',
+    1 : 'Yes'
+    }
+    PH_data = PH_data.replace({'has_digital access':class_mapping})
+
     fig, ax = plt.subplots(figsize=(10, 5))
     sns.countplot(x='has_digital access', data=PH_data)
     
@@ -28,6 +34,8 @@ def digital_access(data):
         x = p.get_x() + p.get_width() - 0.5
         y = p.get_height() + 0.5
         ax.annotate(percentage, (x, y))
+
+    plt.xlabel('Has Digital Access')
         
     return fig
 
@@ -62,6 +70,12 @@ def digital_access_sea(data):
 def has_mobile_phone(data):
     PH_data = data[data['economy']=='Philippines']
     PH_data['has_mobilephone'] = np.where(PH_data[['mobileowner']].eq(1).any(axis = 1 ), 1, 0)
+
+    class_mapping = {
+    0 : 'No',
+    1 : 'Yes'
+    }
+    PH_data = PH_data.replace({'has_mobilephone':class_mapping})
 
     fig, ax = plt.subplots(figsize=(10, 5))
     sns.countplot(x='has_mobilephone', data=PH_data)
