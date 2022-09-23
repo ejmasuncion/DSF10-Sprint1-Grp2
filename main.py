@@ -68,13 +68,76 @@ def digital_overview():
     pass
 
 def clusters():
-    pass
+    st.title('Clustering')
+    st.subheader('this is subheader')
+    # st.image()
+    # st.pyplot()
+
+    with st.expander("See explanation"):
+        st.write(
+            """
+            placeholder
+            """
+        )
+
+
 
 def recommendations():
-    pass
+    st.title('Recommendations')
+    st.markdown(
+        " - insert reco"
+    )
+    st.markdown(
+        " - insert reco"
+    )
+    st.markdown(
+        " - insert reco"
+    )
+    st.markdown(
+        " - insert reco"
+    )
+
 
 def the_team():
-    pass
+    st.title('The Team')
+    with st.container():
+        col1, col2, col3 = st.columns()
+
+        with col1:
+            # st.image()
+            st.markdown("**Name**")
+            st.write("something")
+            st.write("")
+            st.write("")
+
+            # st.image()
+            st.markdown("**Name**")
+            st.write("something")
+
+        
+        with col2:
+            # st.image()
+            st.markdown("**Name**")
+            st.write("something")
+            st.write("")
+            st.write("")
+
+            # st.image()
+            st.markdown("**Name**")
+            st.write("something")
+
+        
+        with col3:
+            # st.image()
+            st.markdown("**Name**")
+            st.write("something")
+            st.write("")
+            st.write("")
+
+            # st.image()
+            st.markdown("**Name**")
+            st.write("something")
+
 
 
 list_of_pages = [
