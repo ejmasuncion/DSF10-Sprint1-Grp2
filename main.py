@@ -40,8 +40,16 @@ def load_data():
 def overview():
     st.title('Digital Financial Access in the Philippines: An Opportunity for Financial Inclusion')
     st.subheader('this is a subheader')
-    st.image('images/test_img1.png', width = 800) # width is in pixels?
-    st.caption('this is a caption')
+    col1, col2, col3 = st.columns([1,6,1])
+    with col1:
+        st.write("")
+
+    with col2:
+        st.image('images/diskartech.png', width = 800, caption = 'this is a sample caption') # width is in pixels?
+
+    with col3:
+        st.write("")
+    
     st.write(lorem.paragraph())
 
     with st.container():
