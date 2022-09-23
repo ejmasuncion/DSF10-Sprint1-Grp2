@@ -211,7 +211,9 @@ def recommendations():
                 - something
                 '''
             )
-    
+    st.write('')
+    st.write('')
+    st.write('')
     with st.container():
         col1, col2 = st.columns([1,1])
 
@@ -226,6 +228,9 @@ def recommendations():
                 - something
                 '''
             )
+    st.write('')
+    st.write('')
+    st.write('')
     
     with st.container():
         col1, col2 = st.columns([1,1])
