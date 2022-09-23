@@ -70,16 +70,62 @@ def digital_overview():
 def clusters():
     st.title('Clustering')
     st.subheader('this is subheader')
-    # st.image()
-    # st.pyplot()
 
-    with st.expander("See explanation"):
+    with st.container():
+        col1, col2 = st.columns([3,1.5])
+
+        with col1:
+            st.image('images/clusters.png', width = 800)
+            
+        with col2:
+            option = st.selectbox(
+                '',
+                ('Cash Savers', 'Modern Savers', 'Supported', 'Underserved & Vulnerable', 'Money Segregators')
+            )
+            st.write(option)
+            if option == 'Cash Savers':
+                st.image('images/cashsavers.png')
+                st.write(
+                    '''
+                    This group is the largest among the clusters. 
+                    Their employment and income gave them the propensity to save money. 
+                    However, they do not own any type of financial account.
+                    ''')
+            elif option == 'Modern Savers':
+                st.image('images/modernsavers.png')
+                st.write(
+                    '''
+                    This group belongs to the richest 20% 
+                    so they have the means to save and tie it up to a financial account.
+                    ''')
+            elif option == 'Supported':
+                st.image('images/supported.png')
+                st.write(
+                    '''
+                    This group has no income and savings 
+                    ''')
+            elif option == 'Underserved & Vulnerable':
+                st.image('images/vulnerable.png')
+                st.write(
+                    '''
+                    These people are employed but have no savings because they are living paycheck to paycheck.
+                    ''')
+
+            elif option == 'Money Segregators':
+                st.image('images/vulnerable.png')
+                st.write('''
+                These are people who have no savings but have accounts they use for other purposes like 
+                receiving/giving payments, receiving/giving remittances and etc.
+                ''')
+            
+            
+    with st.expander("Insights"):
+        st.image('images/radar_chart.png', width = 800)
         st.write(
             """
             placeholder
             """
         )
-
 
 
 def recommendations():
@@ -101,40 +147,49 @@ def recommendations():
 def the_team():
     st.title('The Team')
     with st.container():
-        col1, col2, col3 = st.columns()
+        col1, col2, col3 = st.columns([1,1,1])
 
         with col1:
-            # st.image()
-            st.markdown("**Name**")
-            st.write("something")
+            name = '<p style="font-size: 30px;"><b>Karen Chrisele M. Bioy</b></p>'            
+            st.markdown(name, unsafe_allow_html=True)
+            st.write("email: kcbioy@gmail.com")
+            st.write("linkedin: https://www.linkedin.com/in/kcbioy/")
+            st.write("github: https://github.com/kcbioy")
+            st.write("")
             st.write("")
             st.write("")
 
-            # st.image()
             st.markdown("**Name**")
             st.write("something")
 
         
         with col2:
-            # st.image()
-            st.markdown("**Name**")
-            st.write("something")
+            name = '<p style="font-size: 30px;"><b>Chiara Gabrelle S. Perez</b></p>'
+            st.markdown(name, unsafe_allow_html= True)
+            st.write("email: chiaraperez2000@gmail.com")
+            st.write("linkedin: https://www.linkedin.com/in/chiara-perez/")
+            st.write("github: https://github.com/chiaperez")
+            st.write("")
             st.write("")
             st.write("")
 
-            # st.image()
-            st.markdown("**Name**")
-            st.write("something")
+            name = '<p style="font-size: 30px;"><b>Enrico Jose M. Asuncion</b></p>'
+            st.markdown(name, unsafe_allow_html= True)
+            st.write("email: ejmasuncion@yahoo.com")
+            st.write("linkedin: https://www.linkedin.com/in/ejmasuncion/")
+            st.write("github: https://github.com/ejmasuncion")
 
         
         with col3:
-            # st.image()
-            st.markdown("**Name**")
-            st.write("something")
+            name = '<p style="font-size: 30px;"><b>Ma. Karla Coleen G. Concepcion</b></p>'
+            st.markdown(name, unsafe_allow_html= True)
+            st.write("email: karlacoleenconcepcion@gmail.com")
+            st.write("linkedin: https://www.linkedin.com/in/karlacoleenconcepcion")
+            st.write("github: https://github.com/karlacoleen")
+            st.write("")
             st.write("")
             st.write("")
 
-            # st.image()
             st.markdown("**Name**")
             st.write("something")
 
