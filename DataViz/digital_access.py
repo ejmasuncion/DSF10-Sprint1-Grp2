@@ -19,10 +19,10 @@ def digital_access(data):
     PH_data = data[data['economy']=='Philippines']
 
     fig, ax = plt.subplots(figsize=(10, 5))
-    sns.countplot(x='Digital Access', data=PH_data)
+    sns.countplot(x='has_digital access', data=PH_data)
     
     # Annotate percentage
-    total = len(PH_data['Digital Access'])
+    total = len(PH_data['has_digital access'])
     for p in ax.patches:
         percentage = '{:.1f}%'.format(100 * p.get_height()/total)
         x = p.get_x() + p.get_width() - 0.5
