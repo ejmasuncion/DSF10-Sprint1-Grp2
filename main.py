@@ -82,7 +82,6 @@ def clusters():
                 '',
                 ('Cash Savers', 'Modern Savers', 'Supported', 'Underserved & Vulnerable', 'Money Segregators')
             )
-            st.write(option)
             if option == 'Cash Savers':
                 st.image('images/cashsavers.png')
                 st.write(
@@ -112,36 +111,74 @@ def clusters():
                     ''')
 
             elif option == 'Money Segregators':
-                st.image('images/vulnerable.png')
+                st.image('images/segregators.png')
                 st.write('''
                 These are people who have no savings but have accounts they use for other purposes like 
                 receiving/giving payments, receiving/giving remittances and etc.
                 ''')
             
-            
-    with st.expander("Insights"):
-        st.image('images/radar_chart.png', width = 800)
-        st.write(
-            """
-            placeholder
-            """
-        )
+    st.subheader('Insigths')        
+    with st.container():
+        col1, col2 = st.columns([1,2])
 
+        with col1:
+            st.write(
+                '''
+                - something
+                - somthing
+                '''
+            )
+        with col2:
+            st.image('images/radar_chart.png')
 
 def recommendations():
     st.title('Recommendations')
-    st.markdown(
-        " - insert reco"
-    )
-    st.markdown(
-        " - insert reco"
-    )
-    st.markdown(
-        " - insert reco"
-    )
-    st.markdown(
-        " - insert reco"
-    )
+    st.subheader('placeholder')
+
+    with st.container():
+        col1, col2 = st.columns([1,1])
+
+        with col1:
+            st.image('images/local_initiatives.png')
+        with col2:
+            title = '<p style="font-size: 30px;"><b>Expand local initiatives</b> that uses e-wallets as payment solutions.</p>'
+            st.markdown(title, unsafe_allow_html=True)
+            st.write(
+                '''
+                - something
+                - something
+                '''
+            )
+    
+    with st.container():
+        col1, col2 = st.columns([1,1])
+
+        with col1:
+            st.image('images/ads.png')
+        with col2:
+            title = '<p style="font-size: 30px;">Create <b> targeted and more inclusive advertising.</b></p>'
+            st.markdown(title, unsafe_allow_html=True)
+            st.write(
+                '''
+                - something
+                - something
+                '''
+            )
+    
+    with st.container():
+        col1, col2 = st.columns([1,1])
+
+        with col1:
+            st.image('images/literacy.png')
+        with col2:
+            title = '<p style="font-size: 30px;"><b>Financial Literacy</b> programs for school-age children.</p>'
+            st.markdown(title, unsafe_allow_html=True)
+            st.write(
+                '''
+                - something
+                - something
+                '''
+            )
 
 
 def the_team():
