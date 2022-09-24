@@ -39,7 +39,7 @@ def load_data():
 
 def overview():
     st.title('Bridging the gap in financial inclusion in the Philippines through digital finance')
-    col1, col2, col3 = st.columns([1,6,1])
+    col1, col2, col3 = st.columns([1,10,1])
     with col1:
         st.write("")
 
@@ -116,9 +116,11 @@ def look_account_ownership():
     
 def digital_overview():
 
-    st.header('This is a header')
+    st.header('Digital Finance will bridge the gap in account ownership')
 
-    st.write(lorem.paragraph())
+    st.write('''
+    
+    ''')
 
     col1, col2 = st.columns(2)
 
@@ -131,7 +133,10 @@ def digital_overview():
         st.pyplot(has_mobile_phone(ph_data))
 
     
-    st.write(lorem.paragraph())
+    st.write('''Despite having a large number of individuals owning a mobile phone and the availability of digital financial services, only 1 in 10 Filipinos 
+    actually use their phones for financial transactions. 
+    This presents an opportunity to introduce digital finance as a tool to make other financial services available to the different people 
+    - especially to the unbanked who have mobile phones. ''')
 
     with st.container():
         col1, col2, col3 = st.columns((2,8,2))
@@ -145,9 +150,11 @@ def digital_overview():
 
         with col3:
             pass
-    st.write('''This presents an opportunity to introduce digital finance as a tool to make other financial services available to the different people 
-    - especially to the unbanked who have mobile phones. \n \n Philippines falls in the bottom four in terms of digital financial access in Southeast Asia. 
+    
+    st.write('''This low utilization of mobile financial services becomes more apparent when we compare it with utilization across the Southeast Asia region.
+    The Philippines falls in the bottom four in terms of digital financial access in the region. 
     ''')
+
     with st.container():
         col1, col2, col3 = st.columns((2,8,2))
         with col1:
@@ -273,8 +280,7 @@ def recommendations():
             st.markdown(title, unsafe_allow_html=True)
             st.write(
                 '''
-                - Financial institutions and experts can work with schools, non-governmental organisations (NGOs) and communities to deliver financial education 
-                programmes to school-age children.
+                - Financial institutions and experts can work with schools, non-governmental organisations (NGOs) and communities to deliver financial education programmes to school-age children.
                 - An example of this is the Peso Smart - Manulife’s financial literacy program
                 '''
             )
@@ -338,7 +344,7 @@ def the_team():
 
 list_of_pages = [
     "Overview",
-    "Look Account Ownership",
+    "Account Ownership",
     "Digital Overview",
     "Financial Inclusion Segments",
     "Recommendations",
@@ -353,7 +359,7 @@ selection = st.sidebar.radio("Go to: ", list_of_pages)
 if selection == "Overview":
     overview()
 
-elif selection == "Look Account Ownership":
+elif selection == "Account Ownership":
     look_account_ownership()
 
 elif selection == "Digital Overview":
