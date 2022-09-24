@@ -267,9 +267,11 @@ def the_team():
             st.write("")
             st.write("")
 
-            st.markdown("**Name**")
-            st.write("something")
-
+            name = '<p style="font-size: 30px;"><b>Sofia Adriana L. Calvo</b></p>'
+            st.markdown(name, unsafe_allow_html= True)
+            st.write("email: sofiaacalvo@gmail.com")
+            st.write("linkedin: https://www.linkedin.com/in/sofiaadrianacalvo")
+            st.write("github: https://github.com/sofadrianacalvo")
         
         with col2:
             name = '<p style="font-size: 30px;"><b>Chiara Gabrelle S. Perez</b></p>'
@@ -298,7 +300,7 @@ def the_team():
             st.write("")
             st.write("")
 
-            name = '<p style="font-size: 30px;"><b>Rex Fuentes</b></p>'
+            name = '<p style="font-size: 30px;"><b>Rex G. Fuentes</b></p>'
             st.markdown(name, unsafe_allow_html= True)
             st.write("email: rexfuentes@gmail.com")
             st.write("linkedin: https://www.linkedin.com/in/rex-f-b425ab249/")
