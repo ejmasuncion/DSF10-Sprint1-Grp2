@@ -138,8 +138,8 @@ def digital_overview():
 
 
 def clusters():
-    st.title('Clustering')
-    st.subheader('this is subheader')
+    st.title('Financial Inclusion Segments')
+    st.subheader('We identified 5 segments of financial inclusion to understand the different attitudes and needs of each group.')
 
     with st.container():
         col1, col2 = st.columns([8,4])
@@ -187,6 +187,7 @@ def clusters():
                 receiving/giving payments, receiving/giving remittances and etc.
                 ''')
             
+    st.markdown('***')
     st.subheader('Insigths')        
     with st.container():
         col1, col2 = st.columns([1,2])
@@ -194,8 +195,8 @@ def clusters():
         with col1:
             st.write(
                 '''
-                - something
-                - somthing
+                - We can see that all excluded segments have similar pain points with having not enough money to use FI as the greatest barrier, followed by financial services being too expensive. For these groups, cost is the main driver that discourages them from availing financial services.
+                - Other notable barriers are having no necessary documentation and financial institutions being too far away.
                 '''
             )
         with col2:
@@ -203,8 +204,9 @@ def clusters():
 
 def recommendations():
     st.title('Recommendations')
-    st.subheader('placeholder')
+    # st.subheader('placeholder')
 
+    st.markdown('***')
     with st.container():
         col1, col2 = st.columns([1,1])
 
@@ -215,13 +217,11 @@ def recommendations():
             st.markdown(title, unsafe_allow_html=True)
             st.write(
                 '''
-                - something
-                - something
+                - In 2018, the city of Valenzuela partnered with Maya to transform one of their public markets into a “DigiPalengke”.
+                - In 2020, Makati City, Muntinlupa City used GCash for digital 'ayuda' distribution. 
                 '''
             )
-    st.write('')
-    st.write('')
-    st.write('')
+    st.markdown('***')
     with st.container():
         col1, col2 = st.columns([1,1])
 
@@ -232,14 +232,10 @@ def recommendations():
             st.markdown(title, unsafe_allow_html=True)
             st.write(
                 '''
-                - something
-                - something
+                - Partner with local influencers to promote currently available financial products and services.
                 '''
             )
-    st.write('')
-    st.write('')
-    st.write('')
-    
+    st.markdown('***')
     with st.container():
         col1, col2 = st.columns([1,1])
 
@@ -250,8 +246,8 @@ def recommendations():
             st.markdown(title, unsafe_allow_html=True)
             st.write(
                 '''
-                - something
-                - something
+                - Financial institutions and experts can work with schools, non-governmental organisations (NGOs) and communities to deliver financial education programmes to school-age children.
+                - An example of this is the Peso Smart - Manulife’s financial literacy program
                 '''
             )
 
@@ -302,8 +298,11 @@ def the_team():
             st.write("")
             st.write("")
 
-            st.markdown("**Name**")
-            st.write("something")
+            name = '<p style="font-size: 30px;"><b>Rex Fuentes</b></p>'
+            st.markdown(name, unsafe_allow_html= True)
+            st.write("email: rexfuentes@gmail.com")
+            st.write("linkedin: https://www.linkedin.com/in/rex-f-b425ab249/")
+            st.write("github: https://github.com/code18524")
 
 
 
