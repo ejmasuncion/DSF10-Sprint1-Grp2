@@ -1,12 +1,11 @@
 from gettext import install
-from turtle import width
+# from turtle import width
 import matplotlib.pyplot as plt
 import pandas as pd
 import plotly.express as px
 import seaborn as sns
 import streamlit as st
 import lorem 
-import base64
 
 
 from DataViz.plot_account_activity import *
