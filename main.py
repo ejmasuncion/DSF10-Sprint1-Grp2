@@ -101,18 +101,15 @@ def look_account_ownership():
    
     st.write(''' 
     In 2017, the majority of Filipinos were found to not own a financial account. For those with an account, majority have an account in financial institutions only.
-    Interestingly, those with mobile money only were found to be the least. **.
+    Interestingly, those with mobile money only were found to be the least**.
     ''')
     st.write("")
 
-        
+    st.header('According to the survey, why are the unbanked Filipinos still unbanked?')
 
     col1, col2, col3 = st.columns((2,8,2))
     with col1:
         pass
-    
-    st.header('According to the survey, why are the unbanked Filipinos still unbanked?')
-
 
     with col2:
         st.write("")
