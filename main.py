@@ -27,7 +27,7 @@ with open("style.css") as f:
 sns.set_theme(style="white", palette=sns.color_palette("Set2"))
 
 # load the data 
-data = pd.read_csv("../micro_world.csv")
+data = pd.read_csv("data/micro_world.csv")
 ph_data =  data[data['economy']=='Philippines']
 
 def load_data():
