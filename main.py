@@ -39,7 +39,6 @@ def load_data():
 
 def overview():
     st.title('Bridging the gap in financial inclusion in the Philippines through digital finance')
-    st.subheader('this is a subheader')
     col1, col2, col3 = st.columns([1,6,1])
     with col1:
         st.write("")
@@ -50,7 +49,22 @@ def overview():
     with col3:
         st.write("")
     
-    st.write(lorem.paragraph())
+    st.write('''
+    A [study](https://bsc.cid.harvard.edu/files/bsc/files/2021-05-cid-wp-398-development-_delivers.pdf) 
+    from harvard shows the higher the countries’ social progress index, the higher its level of national development. 
+    Social progress index is the average of basic human needs like:
+     - nutrition, foundations of well being 
+     - access to basic knowledge, and opportunity 
+     - personal rights 
+    This tell us that no country with low levels of national development has high levels of human well being.
+    One way of national development is financial inclusion since it is a state in which everyone (especially vulnerable sectors)
+    has effective access to a wide range of financial services that could boost the economy.
+    ''')
+    st.write("")
+    st.write(''' 
+    Using the [Global Financial Inclusion (Global Findex) Database 2017](https://microdata.worldbank.org/index.php/catalog/3324/data-dictionary/F2?file_name=micro_world),
+    a comprehensive data set on how adults save, borrow, make payments, and manage risk. 
+    ''')
 
     with st.container():
         col1, col2, col3 = st.columns((1,9,1))
@@ -64,7 +78,9 @@ def overview():
         with col3:
             pass
     
-    st.write(lorem.paragraph())
+    st.write(''' 
+    An exploration into this data revealed that the **Philippines is still heavily reliant in cash as a method of payment**.
+    ''')
     st.write("")
     
 
