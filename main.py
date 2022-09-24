@@ -50,12 +50,12 @@ def overview():
         st.write("")
     
     st.write('''
-    A [study](https://bsc.cid.harvard.edu/files/bsc/files/2021-05-cid-wp-398-development-_delivers.pdf) 
+        A [study](https://bsc.cid.harvard.edu/files/bsc/files/2021-05-cid-wp-398-development-_delivers.pdf) 
     from harvard shows the higher the countries’ social progress index, the higher its level of national development. 
     Social progress index is the average of basic human needs like:
-     - nutrition, foundations of well being 
-     - access to basic knowledge, and opportunity 
-     - personal rights 
+     - Basic human needs (i.e. nutrition)
+     - Foundations of well being (i.e. access to basic knowledge)
+     - Opportunity (i.e. personal rights)
     This tell us that no country with low levels of national development has high levels of human well being.
     One way of national development is financial inclusion since it is a state in which everyone (especially vulnerable sectors)
     has effective access to a wide range of financial services that could boost the economy.
@@ -86,7 +86,7 @@ def overview():
 
 
 def look_account_ownership():
-    st.header('Account Ownership in 2017')
+    st.header('What is the status of account ownership among Filipinos?')
 
     col1, col2, col3 = st.columns((2,8,2))
     with col1:
@@ -99,13 +99,21 @@ def look_account_ownership():
     with col3:
         pass
    
-    st.write(lorem.paragraph())
+    st.write(''' 
+    In 2017, the majority of Filipinos were found to not own a financial account. For those with an account, majority have an account in financial institutions only.
+    Interestingly, those with mobile money only were found to be the least. **.
+    ''')
+    st.write("")
 
         
 
     col1, col2, col3 = st.columns((2,8,2))
     with col1:
         pass
+    
+    st.header('According to the survey, why are the unbanked Filipinos still unbanked?')
+
+
     with col2:
         st.write("")
         st.write("")
@@ -113,6 +121,17 @@ def look_account_ownership():
 
     with col3:
         pass
+
+    st.write(''' 
+    The main reason is - Filipinos do not have enough money to use financial services. This is followed by Filipinos thinking that financial services are too expensive and that they do not have the necessary documentation to open such accounts.
+    
+    Insights:
+
+    1. Most Filipinos are unbankable since they do not have enough money to open an account.
+    2. The requirements in opening an account might be too rigid for the Filipino population.
+    ''')
+    st.write("")
+
     
 def digital_overview():
 
