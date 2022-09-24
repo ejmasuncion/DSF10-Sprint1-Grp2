@@ -310,7 +310,7 @@ list_of_pages = [
     "Overview",
     "Look Account Ownership",
     "Digital Overview",
-    "Clustering",
+    "Financial Inclusion Segments",
     "Recommendations",
     "The Team"
 ]
@@ -326,10 +326,8 @@ if selection == "Overview":
 elif selection == "Look Account Ownership":
     look_account_ownership()
 
-elif selection == "Digital Overview":
-    digital_overview()
 
-elif selection == "Clustering":
+elif selection == "Financial Inclusion Segments":
     clusters()
 
 elif selection == "Recommendations":
