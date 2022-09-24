@@ -12,6 +12,7 @@ import base64
 from DataViz.plot_account_activity import *
 from DataViz.digital_access import *
 from DataViz.reasons import *
+from DataViz.received_payment import received_payment
 from add_background import add_bg_from_local
 
 # # settings for all of the pages in the app
@@ -38,7 +39,7 @@ def load_data():
     return data
 
 def overview():
-    st.title('Digital Financial Access in the Philippines: An Opportunity for Financial Inclusion')
+    st.title('Bridging the gap in financial inclusion in the Philippines through digital finance')
     st.subheader('this is a subheader')
     col1, col2, col3 = st.columns([1,6,1])
     with col1:
@@ -53,41 +54,50 @@ def overview():
     st.write(lorem.paragraph())
 
     with st.container():
-        col1, col2, col3 = st.columns((2,8,2))
+        col1, col2, col3 = st.columns((1,9,1))
         with col1:
             pass
         with col2:
             st.write("")
             st.write("")
-            st.pyplot(reasons_no_account(ph_data))
+            st.pyplot(received_payment(ph_data))
 
         with col3:
             pass
+    
+    st.write(lorem.paragraph())
+    st.write("")
+    
 
 
 def look_account_ownership():
     st.header('Account Ownership in 2017')
 
-    with st.container():
-        
-        col1, col2 = st.columns([5,7])
-        
-        with col1:
-            st.pyplot(has_an_account(ph_data))
-            st.write(lorem.paragraph())
+    col1, col2, col3 = st.columns((2,8,2))
+    with col1:
+        pass
+    with col2:
+        st.write("")
+        st.write("")
+        st.pyplot(has_an_account(ph_data))
 
-        with col2:
-            option = st.selectbox(
-                'What would you like to see?',
-                ('Account Activity', 'Mobile Activity', 'Others'))
-            st.write('You selected:', option)
-            if (option) == 'Mobile Activity':
-                st.pyplot(plot_mobile_activity(ph_data))
-            elif (option) == 'Account Activity':
-                st.pyplot(plot_account_activity(ph_data))
-            else :
-                st.write('PLOT COMING SOON! ^_^')
+    with col3:
+        pass
+   
+    st.write(lorem.paragraph())
 
+        
+
+    col1, col2, col3 = st.columns((2,8,2))
+    with col1:
+        pass
+    with col2:
+        st.write("")
+        st.write("")
+        st.pyplot(reasons_no_account(ph_data))
+
+    with col3:
+        pass
     
 def digital_overview():
 
@@ -98,11 +108,11 @@ def digital_overview():
     col1, col2 = st.columns(2)
 
     with col1:
-        st.subheader('Low account ownership')
+        st.subheader('3 in 10 Filipinos has an account')
         st.pyplot(has_an_account(ph_data))
 
     with col2:
-        st.subheader('High mobile phone ownership')
+        st.subheader('7 in 10 Filipinos owns a mobile phone')
         st.pyplot(has_mobile_phone(ph_data))
 
     
@@ -115,7 +125,7 @@ def digital_overview():
         with col2:
             st.write("")
             st.write("")
-            st.subheader('Low utilization of mobile financial services')
+            st.subheader('Only 1 in 10 Filipinos uses mobile financial services')
             st.pyplot(digital_access(ph_data))
 
         with col3:
@@ -134,6 +144,7 @@ def digital_overview():
 
         with col3:
             pass
+   
    
 
 
@@ -195,7 +206,8 @@ def clusters():
         with col1:
             st.write(
                 '''
-                - We can see that all excluded segments have similar pain points with having not enough money to use FI as the greatest barrier, followed by financial services being too expensive. For these groups, cost is the main driver that discourages them from availing financial services.
+                - We can see that all excluded segments have similar pain points with having not enough money to use FI as the greatest barrier, 
+                followed by financial services being too expensive. For these groups, cost is the main driver that discourages them from availing financial services.
                 - Other notable barriers are having no necessary documentation and financial institutions being too far away.
                 '''
             )
@@ -246,7 +258,8 @@ def recommendations():
             st.markdown(title, unsafe_allow_html=True)
             st.write(
                 '''
-                - Financial institutions and experts can work with schools, non-governmental organisations (NGOs) and communities to deliver financial education programmes to school-age children.
+                - Financial institutions and experts can work with schools, non-governmental organisations (NGOs) and communities to deliver financial education 
+                programmes to school-age children.
                 - An example of this is the Peso Smart - Manulife’s financial literacy program
                 '''
             )
@@ -325,6 +338,9 @@ if selection == "Overview":
 
 elif selection == "Look Account Ownership":
     look_account_ownership()
+
+elif selection == "Digital Overview":
+    digital_overview()
 
 
 elif selection == "Financial Inclusion Segments":
